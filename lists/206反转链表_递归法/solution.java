@@ -1,18 +1,15 @@
 /** 
- *解法一：快慢指针法（迭代法）
- *每一次把cur节点指向pre节点，然后前移更新pre和cur，所以要提前储存cur.next
+ *解法二：递归法
+ *把除首节点外其余反转然后把首节点反转
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
-        ListNode pre = null;
-        ListNode cur = head;
-        ListNode tmp = null;/** 定义前后2个指针，和tmp这个变量*/
-        while(cur!= null){
-            tmp = cur.next;/** 存储cur.next的值，因为之后修改后会变动所以要先存储*/
-            cur.next = pre;/** 把当前节点指向前一个节点*/
-            pre = cur;
-            cur = tmp;/** 两个指针同时后移*/
+        if (head == null || head.next == null){
+            return head;
         }
-        return pre;/** 因为返回pre才能遍历一遍，所以一开始是while（cur！= null）*/
+        ListNode newlist = reverseList(head.next);
+        head.next.next = head; /**把之前连接反向*/
+        head.next = null;/**把之后变为null=[-*/
+        return newlist;
     }
 }
