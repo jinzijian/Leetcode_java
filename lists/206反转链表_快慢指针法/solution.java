@@ -11,7 +11,7 @@ class Solution {
             tmp = cur.next;/** 存储cur.next的值，因为之后修改后会变动所以要先存储*/
             cur.next = pre;/** 把当前节点指向前一个节点*/
             pre = cur;
-            cur = tmp;/** 两个指针同时后移*/
+            cur = tmp;/** 两个指针同时后移,最后pre指向尾部，cur指向尾部之后的一个*/
         }
         return pre;/** 因为返回pre才能遍历一遍，所以一开始是while（cur！= null）*/
     }
