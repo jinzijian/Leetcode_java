@@ -4,12 +4,13 @@
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
+        /**终止条件*/
         if (head == null || head.next == null){
             return head;
         }
         ListNode newlist = reverseList(head.next);
         head.next.next = head; /**把之前连接反向*/
-        head.next = null;/**把之后变为null=[-*/
+        head.next = null;/**把之后变为null=-*/
         return newlist;
     }
 }
