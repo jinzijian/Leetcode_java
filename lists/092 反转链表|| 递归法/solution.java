@@ -3,6 +3,7 @@ class Solution {
     /**定义一个方法能反转链表的前n个值*/
     ListNode successor = null; 
     ListNode last = null;
+    /**这个变量不能写在方法里不然每次都被置空 */
     public ListNode reverseN(ListNode head,int n){
         /**终止条件，不反转的情况*/
         if (n==1){
