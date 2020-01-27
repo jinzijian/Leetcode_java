@@ -1,4 +1,9 @@
 /** 快慢指针法：先用快慢指针找到中点，再将后半部分反转进行比较*/
+public class ListNode {
+      int val;
+      ListNode next;
+      ListNode(int x) { val = x; }
+  }
 class Solution {
     public boolean isPalindrome(ListNode head) {
         if(head == null || head.next == null) {
@@ -6,9 +11,8 @@ class Solution {
         }
         /** 找中点 */
         ListNode p = new ListNode(-1);
-        /** 找中点重点是要有虚拟节点，这样可以避免奇偶数的问题 */
-        ListNode slow = p;
         ListNode fast = p;
+        ListNode slow = p;
         p.next = head;
         while(fast!=null && fast.next!=null){
             fast = fast.next.next;
@@ -19,7 +23,6 @@ class Solution {
         ListNode tmp = null;
         slow.next = null;
         slow = p.next;
-        /** 前半段与反转后的后半段比较 */
         while(cur!=null){
             tmp = cur.next;
             cur.next = pre;
