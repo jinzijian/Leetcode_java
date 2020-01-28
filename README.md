@@ -8,5 +8,8 @@
 
 链表题的基础在于对节点的保存和重定向，常用的技巧为虚拟头结点和双指针方法。
 
-下面我们就从一道双节点问题开始。
+（1）首先我们从一道双指针问题开始：[LeetCode 876 寻找链表的中点](https://leetcode-cn.com/problems/middle-of-the-linked-list/)
 
+**这道题的重点在于链表长度分别为奇数和偶数时如何处理，当为偶数时如何根据题意控制中点位置。**
+
+具体解答如下：[jzj Github Solutions](https://leetcode-cn.com/problems/middle-of-the-linked-list/)
