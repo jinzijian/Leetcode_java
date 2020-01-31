@@ -5,9 +5,6 @@ class Solution {
         if(head.next==null){
             return head;
         }
-        if(head.next.next == null){
-            return head.next;
-        }
         ListNode slow = head;
         ListNode fast = head;
         while(fast!=null && fast.next!= null){
