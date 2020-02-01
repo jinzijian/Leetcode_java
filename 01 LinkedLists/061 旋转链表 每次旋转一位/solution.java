@@ -1,4 +1,5 @@
 /**每次旋转一位*/
+/**要提前算好size不然每次计算会导致超时*/
 class Solution {
     public int findsize(ListNode head){
         ListNode tmp = head;

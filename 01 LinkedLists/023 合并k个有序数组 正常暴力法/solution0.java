@@ -1,4 +1,4 @@
-/**暴力法：处理后版本*/
+/**丑陋解法*/
 class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummyhead = new ListNode(0);
@@ -30,15 +30,10 @@ class Solution {
         return dummyhead.next;
     }
     public ListNode mergeKLists(ListNode[] lists) {
-        /**判断lists为空的情况*/
-        if(lists.length == 0){
-            return null;
-        }
-        ListNode res = lists[0];
-        /**直接从list[0]开始，但这样要记得判断lists为空的情况*/
-        for(int i = 1; i< lists.length;i++){
+        ListNode res = new ListNode(-10000000);
+        for(int i = 0; i< lists.length;i++){
             res = mergeTwoLists(lists[i],res);
         }
-        return res;
+        return res.next;
     }
 }
