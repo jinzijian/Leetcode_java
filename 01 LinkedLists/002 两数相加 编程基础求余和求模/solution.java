@@ -1,7 +1,8 @@
 /**
- *数学法：核心是取余数和求模
- *需要注意细节：最后sum还剩1 要记得加上
- */
+ *数学法：核心是取余数和求模*/
+/**需要注意细节：*/
+/**(1) l1 l2 长短不一 要记得时刻检查是否为空*/
+/**（2）最后sum还剩1 要记得加上*/
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0);/**创建哑结点*/
