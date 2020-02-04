@@ -1,20 +1,15 @@
-/** 快慢指针法 */
+/*双指针法：若不为null 且相遇则为环形 */
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        if (head==null || head.next==null || head.next.next== null){
-            return false;
-        }
-        ListNode fast = head;
+        if(head == null || head.next == null ) return false;
         ListNode slow = head;
-        while(slow!=null && fast!=null && fast.next!=null ){
+        ListNode fast = head;
+        /* fast跳两步的一定要有两个判断 */
+        while(fast!=null && fast.next!=null){
             slow = slow.next;
             fast = fast.next.next;
-            /** null无法调用.next方法，所以必须判断fast.next!= null */
-            if (slow == fast){
-                return true;
-            }
+            if(fast == slow) return true;
         }
         return false;
-        
     }
 }
