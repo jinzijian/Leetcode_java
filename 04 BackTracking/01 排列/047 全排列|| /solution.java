@@ -13,7 +13,7 @@ class Solution {
             res.add(new ArrayList<>(list));
         }
         for(int i = 0; i<nums.length; i++){
-            /*used[i]被用过所以不再使用，或者整个大循环第二个和前一个重复也不再使用*/
+            /*used[i]被用过所以不再使用，或者整个大循环第二个和前一个重复也不再使用， 这几个限制详细原因*/
             if(used[i] || i>0 && nums[i] == nums[i-1] && !used[i-1]) continue;
             used[i] = true;
             list.add(nums[i]);
