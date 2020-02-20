@@ -18,8 +18,6 @@
 
 ​		LeetCode 092
 
-​		LeetCode 206
-
 （2）接下来我们看一道双指针问题：[LeetCode 876 寻找链表的中点](https://leetcode-cn.com/problems/middle-of-the-linked-list/)
 
 **这道题的重点在于链表长度分别为奇数和偶数时如何处理，当为偶数时如何根据题意控制中点位置。**
