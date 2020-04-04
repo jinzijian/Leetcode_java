@@ -4,7 +4,6 @@ class Solution {
         if(root == null) return res;
         Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
-        TreeNode cur = root;
         while(!stack.isEmpty()){
             cur = stack.pop();
             if(cur.right != null) stack.push(cur.right);
