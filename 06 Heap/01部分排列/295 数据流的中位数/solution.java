@@ -1,32 +1,31 @@
 //最大堆 最小堆
 class MedianFinder {
     private int count;
-    private PriorityQueue<Integer> maxheap;
-    private PriorityQueue<Integer> minheap;
+    private PriorityQueue<Integer> minHeap;
+    private PriorityQueue<Integer> maxHeap;
+
     /** initialize your data structure here. */
     public MedianFinder() {
         count = 0;
-        maxheap = new PriorityQueue<>((a, b) -> (b-a));
-        minheap = new PriorityQueue<>();
-        
+        minHeap = new PriorityQueue<>();
+        maxHeap = new PriorityQueue<>((a, b) -> (b - a));
     }
     
     public void addNum(int num) {
-        count += 1;
-        maxheap.offer(num);
-        minheap.offer(maxheap.poll());
-        if(count % 2 != 0){
-            maxheap.offer(minheap.poll());
+        count++;
+        maxHeap.offer(num);
+        minHeap.offer(maxHeap.poll());
+        //注意这里是为奇数时判断
+        if(count % 2 != 0) {
+            maxHeap.offer(minHeap.poll());
         }
+
     }
     
     public double findMedian() {
-        if ((count % 2) == 0) {
-            // 如果两个堆合起来的元素个数是偶数，数据流的中位数就是各自堆顶元素的平均值
-            return (double) (maxheap.peek() + minheap.peek()) / 2;
-        } else {
-            // 如果两个堆合起来的元素个数是奇数，数据流的中位数大顶堆的堆顶元素
-            return (double) maxheap.peek();
+        if(count % 2 == 0) return (double)(maxHeap.peek() + minHeap.peek()) / 2;
+        else{
+            return (double)maxHeap.peek();
         }
     }
 }
